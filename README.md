@@ -1,5 +1,5 @@
-# BedrockSharp | Eggs
-_The BedrockSharp Egg for Pterodactyl is a preconfigured resource that makes it easy to deploy and manage QuantumMC servers through the Pterodactyl control panel. This egg provides an optimized default configuration and an intuitive user interface to facilitate the customization and management of QuantumMC servers._
+# Quantum | Eggs
+_The Quantum Egg for Pterodactyl is a preconfigured resource that makes it easy to deploy and manage QuantumMC servers through the Pterodactyl control panel. This egg provides an optimized default configuration and an intuitive user interface to facilitate the customization and management of QuantumMC servers._
 
 ## Instructions for Deploy
 If you are reading this it looks like you are looking to add an egg to your server.
@@ -18,4 +18,4 @@ If you are reading this it looks like you are looking to add an egg to your serv
    > If you want a new nest you need to create it before importing the egg.
 
 ## Contributors
-@ItsMalikDEV
+@ItzMalikDEV
