@@ -1,0 +1,41 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-04-18T00:00:00+00:00",
+    "name": "QuantumMC (BedrockSharp)",
+    "author": "Vastria@github.com",
+    "description": "QuantumMC - A Minecraft Bedrock server implementation by BedrockSharp",
+    "features": [],
+    "docker_images": {
+        "ghcr.io/ptero-eggs/yolks:dotnet_9": "ghcr.io/ptero-eggs/yolks:dotnet_9"
+    },
+    "file_denylist": [],
+    "startup": "dotnet QuantumMC.dll",
+    "config": {
+        "files": "{}",
+        "startup": "{\"done\": \"\"}",
+        "logs": "{}",
+        "stop": "stop"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!/bin/bash\n\napt-get update > /dev/null 2>&1\napt-get install -y wget curl > /dev/null 2>&1\nmkdir -p /mnt/server/\ncd /mnt/server\n\n# Download QuantumMC from BedrockSharp GitHub releases\nQUANTUMMC_VERSION=\"0.0.1-alpha1\"\nwget -q -O QuantumMC.dll \"https://github.com/BedrockSharp/QuantumMC/releases/download/${QUANTUMMC_VERSION}/QuantumMC.dll\"\n\necho \"QuantumMC ${QUANTUMMC_VERSION} downloaded successfully.\"",
+            "container": "debian:bullseye-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "QuantumMC Version",
+            "description": "The version of QuantumMC to download. Check https://github.com/BedrockSharp/QuantumMC/releases for available versions.",
+            "env_variable": "QUANTUMMC_VERSION",
+            "default_value": "0.0.1-alpha1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20"
+        }
+    ]
+}
