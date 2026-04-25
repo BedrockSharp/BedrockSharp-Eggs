@@ -23,7 +23,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!/bin/bash\n\napt-get update > /dev/null 2>&1\napt-get install -y wget curl > /dev/null 2>&1\nmkdir -p /mnt/server/\ncd /mnt/server\n\n# Download QuantumMC from BedrockSharp GitHub releases\nQUANTUMMC_VERSION=\"0.0.1-alpha1\"\nwget -q -O QuantumMC.dll \"https://github.com/BedrockSharp/QuantumMC/releases/download/${QUANTUMMC_VERSION}/QuantumMC.dll\"\n\necho \"QuantumMC ${QUANTUMMC_VERSION} downloaded successfully.\"",
+            "script": "#!/bin/bash\n\napt-get update > /dev/null 2>&1\napt-get install -y wget curl > /dev/null 2>&1\nmkdir -p /mnt/server/\ncd /mnt/server\n\n# Use panel variable or fallback to alpha2\nQUANTUMMC_VERSION=\"${QUANTUMMC_VERSION:-0.0.1-alpha2}\"\n\n# Download QuantumMC from BedrockSharp GitHub releases\nwget -q -O QuantumMC.dll \"https://github.com/BedrockSharp/QuantumMC/releases/download/${QUANTUMMC_VERSION}/QuantumMC.dll\"\n\necho \"QuantumMC ${QUANTUMMC_VERSION} downloaded successfully.\"",
             "container": "debian:bullseye-slim",
             "entrypoint": "bash"
         }
@@ -33,7 +33,7 @@
             "name": "QuantumMC Version",
             "description": "The version of QuantumMC to download. Check https://github.com/BedrockSharp/QuantumMC/releases for available versions.",
             "env_variable": "QUANTUMMC_VERSION",
-            "default_value": "0.0.1-alpha1",
+            "default_value": "0.0.1-alpha2",
             "user_viewable": true,
             "user_editable": true,
             "rules": "required|string|max:20"
