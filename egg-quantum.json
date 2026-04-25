@@ -10,7 +10,7 @@
     "description": "QuantumMC - A Minecraft Bedrock server implementation by BedrockSharp",
     "features": [],
     "docker_images": {
-        "ghcr.io/ptero-eggs/yolks:dotnet_9": "ghcr.io/ptero-eggs/yolks:dotnet_9"
+        "ghcr.io/ptero-eggs/yolks:dotnet_9": "ghcr.io/ptero-eggs/yolks:dotnet_9",
         "ghcr.io/ptero-eggs/yolks:dotnet_10": "ghcr.io/ptero-eggs/yolks:dotnet_10"
     },
     "file_denylist": [],
